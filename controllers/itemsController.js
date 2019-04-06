@@ -15,7 +15,7 @@ module.exports = {
 			.catch(err => res.json(err));
 	},
 	create: function(req, res) {
-		db.Item.find(req.params.id)
+		db.Item.create(req.body)
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.json(err));
 	},
