@@ -10,7 +10,7 @@ module.exports = {
 			.catch(err => res.json(err));
 	},
 	findById: function(req, res) {
-		db.Item.find(req.params.id)
+		db.Item.find({ _id: req.params.id })
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.json(err));
 	},

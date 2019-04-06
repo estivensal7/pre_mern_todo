@@ -6,7 +6,7 @@ import API from "../Utils/API";
 
 class Detail extends Component {
 	state = {
-		item: {}
+		item: [{}]
 	};
 	// When this component mounts, grab the item with the _id of this.props.match.params.id
 	// e.g. localhost:3000/books/599dcb67f0f16317844583fc
@@ -26,14 +26,14 @@ class Detail extends Component {
 								{
 									this
 										.state
-										.item
+										.item[0]
 										.note
 								}{" "}
 								by{" "}
 								{
 									this
 										.state
-										.item
+										.item[0]
 										.author
 								}
 							</h1>

@@ -7,11 +7,11 @@ export default {
 	},
 	// Gets the item with the given id
 	getItem: function(id) {
-		return axios.get("/api/items/?_id=" + id);
+		return axios.get("/api/items/" + id);
 	},
 	// Deletes the item with the given id
 	deleteItem: function(id) {
-		return axios.delete("/api/items/?_id=" + id);
+		return axios.delete("/api/items/" + id);
 	},
 	// Saves an item to the database
 	saveItem: function(itemData) {

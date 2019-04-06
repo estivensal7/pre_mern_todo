@@ -36,12 +36,13 @@ class Items extends Component {
 			.catch(err => console.log(err));
 	};
 
-	handleInputChange = event => {
-		const { note, value } = event.target;
-		this.setState({
-			[note]: value
-		});
-	};
+	handleInputChange(property) {
+		return e => {
+			this.setState({
+				[property]: e.target.value
+			});
+		};
+	}
 
 	handleFormSubmit = event => {
 		event.preventDefault();
@@ -72,10 +73,9 @@ class Items extends Component {
 										.state
 										.note
 								}
-								onChange={
-									this
-										.handleInputChange
-								}
+								onChange={this.handleInputChange(
+									"note"
+								)}
 								name="note"
 								placeholder="Note (required)"
 							/>
@@ -85,10 +85,9 @@ class Items extends Component {
 										.state
 										.author
 								}
-								onChange={
-									this
-										.handleInputChange
-								}
+								onChange={this.handleInputChange(
+									"author"
+								)}
 								name="author"
 								placeholder="Author (required)"
 							/>
