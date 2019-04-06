@@ -10,7 +10,7 @@ module.exports = {
 			.catch(err => res.json(err));
 	},
 	create: function(req, res) {
-		db.User.find(req.params.id)
+		db.User.create(req.body)
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.json(err));
 	}
